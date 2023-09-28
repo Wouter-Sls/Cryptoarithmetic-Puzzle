@@ -8,7 +8,7 @@ word2=''
 word3=''
 
 st.title("Cryptoarithmetic Puzzle")
-st.header("Wouter Selis")
+st.markdown("Wouter Selis")
 #This function checks if the given word only contains letters. Else it prints an error message and empty the variable so you must re-enter a word.
 def only_letters(word):
     if not word.isalpha():
