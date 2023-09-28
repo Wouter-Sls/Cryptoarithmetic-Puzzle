@@ -7,8 +7,9 @@ word1=''
 word2=''
 word3=''
 
-st.title("Cryptoarithmetic Puzzle")
-st.subheader(':blue[_Created by Wouter Selis_] :male-technologist:', divider='rainbow')
+st.title("Cryptoarithmetic Puzzle") #Show the title of the app on Streamlit
+st.subheader(':blue[_Created by Wouter Selis_] :male-technologist:', divider='rainbow') #Show a subheader on Streamlit with text in blue, an emoji and a rainbow line under the text
+
 #This function checks if the given word only contains letters. Else it prints an error message and empty the variable so you must re-enter a word.
 def only_letters(word):
     if not word.isalpha():
