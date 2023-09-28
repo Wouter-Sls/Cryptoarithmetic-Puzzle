@@ -49,9 +49,6 @@ if word3 == '' and word2 != '' and word2.isalpha() and word1 != '' and word1.isa
 
 #If all words are valid the program can start calculating the numbers
 if word1 !='' and word2 != '' and word3!='' and word3.isalpha():
-    isFilledIn = True
-
-if isFilledIn:
     #The words are stored in a list to iterate over them (see further)
     words = [word1, word2, word3]
 
