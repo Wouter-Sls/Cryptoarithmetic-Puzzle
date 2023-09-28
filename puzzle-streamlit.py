@@ -111,7 +111,7 @@ if isFilledIn:
     output = backtrack(problem)
 
 
-    ######################################################################### SOLUTION ##################################################
+    ######################################################################### OUTPUT ##################################################
 
     #Display the input words in a nice format on the Streamlite app
     st.write(word1, ' + ',word2, ' = ', word3)
@@ -133,3 +133,6 @@ if isFilledIn:
     #Display the letters with their values on the Streamlite app
     for key, value in output.items():
         st.write(key, ' ==> ', str(value))
+
+    if st.button("Refresh"):
+        st.experimental_rerun()
