@@ -25,7 +25,7 @@ def only_letters(word):
 #If the word contains anything other than letters it will display an error message
 if word1 == '':
     try:
-        word1 = st.text_input('Give the first word: ', 'to') #This will create an input field with label on the Streamlite app
+        word1 = st.text_input('Give the first word: ', placeholder='to') #This will create an input field with label on the Streamlite app
         if word1!='':
             only_letters(word1)
     except UnboundLocalError: 
