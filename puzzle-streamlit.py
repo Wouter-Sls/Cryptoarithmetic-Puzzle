@@ -25,7 +25,7 @@ def only_letters(word):
 #If the word contains anything other than letters it will display an error message
 if word1 == '':
     try:
-        word1 = st.text_input('Give the first word: ') #This will create an input field with label on the Streamlite app
+        word1 = st.text_input('Give the first word: ', placeholder='to') #This will create an input field with label on the Streamlite app
         if word1!='':
             only_letters(word1)
     except UnboundLocalError: 
@@ -33,7 +33,7 @@ if word1 == '':
 
 if word2 == '' and word1 != '' and word1.isalpha():
     try:
-        word2 = st.text_input('Give the second word: ')
+        word2 = st.text_input('Give the second word: ', placeholder='go')
         if word2!='':
             only_letters(word2)
     except UnboundLocalError: 
@@ -41,7 +41,7 @@ if word2 == '' and word1 != '' and word1.isalpha():
 
 if word3 == '' and word2 != '' and word2.isalpha() and word1 != '' and word1.isalpha():
     try:
-        word3 = st.text_input('Give the result word: ')
+        word3 = st.text_input('Give the result word: ', placeholder='out')
         if word3!='':
             only_letters(word3)
     except UnboundLocalError: 
@@ -115,6 +115,20 @@ if isFilledIn:
 
     #Display the input words in a nice format on the Streamlite app
     st.write(word1, ' + ',word2, ' = ', word3)
+
+    #Get the values of each word and display them
+    all_values = ''
+    for word in words:
+        for letter in word:
+            for key, value in output.items():
+                if letter==key:
+                   all_values+=str(value)  
+
+    vw1=all_values[:len(word1)]
+    vw2=all_values[len(word1): len(word1)+len(word2)]
+    vw3=all_values[len(word1)+len(word2):]
+    
+    st.write(vw1, ' + ',vw2, ' = ', vw3)
 
     #Display the letters with their values on the Streamlite app
     for key, value in output.items():
