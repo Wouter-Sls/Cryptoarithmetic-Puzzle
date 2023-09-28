@@ -1,4 +1,5 @@
 from simpleai.search import CspProblem, backtrack
+from streamlit_js_eval import streamlit_js_eval
 import streamlit as st
 
 ########################################################################## USER INPUT #######################################
@@ -134,5 +135,7 @@ if isFilledIn:
     for key, value in output.items():
         st.write(key, ' ==> ', str(value))
 
+    
+
     if st.button("Refresh"):
-        st.caching.clear_cache()
+        streamlit_js_eval(js_expressions="parent.window.location.reload()")
