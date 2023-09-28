@@ -113,20 +113,24 @@ if word1 !='' and word2 != '' and word3!='' and word3.isalpha():
     #Display the input words in a nice format on the Streamlite app
     st.write(word1, ' + ',word2, ' = ', word3)
 
-    #Get the values of each word and display them
-    all_values = ''
-    for word in words:
-        for letter in word:
-            for key, value in output.items():
-                if letter==key:
-                   all_values+=str(value)  
 
-    vw1=all_values[:len(word1)]
-    vw2=all_values[len(word1): len(word1)+len(word2)]
-    vw3=all_values[len(word1)+len(word2):]
-    
-    st.write(vw1, ' + ',vw2, ' = ', vw3)
+    if output is not None:
+        #Get the values of each word and display them
+        all_values = ''
+        for word in words:
+            for letter in word:
+                for key, value in output.items():
+                    if letter==key:
+                        all_values+=str(value)  
 
-    #Display the letters with their values on the Streamlite app
-    for key, value in output.items():
-        st.write(key, ' ==> ', str(value))
+        vw1=all_values[:len(word1)]
+        vw2=all_values[len(word1): len(word1)+len(word2)]
+        vw3=all_values[len(word1)+len(word2):]
+        
+        st.write(vw1, ' + ',vw2, ' = ', vw3)
+
+        for key, value in output.items():
+            st.write(key, ' ==> ', str(value))
+    #Display the letters with their values on the Streamlite app  
+    else:
+        st.write('No solution found for this puzzle.')
