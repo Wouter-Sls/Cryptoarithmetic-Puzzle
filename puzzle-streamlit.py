@@ -135,4 +135,4 @@ if isFilledIn:
         st.write(key, ' ==> ', str(value))
 
     if st.button("Refresh"):
-        st.experimental_rerun()
+        st.caching.clear_cache()
